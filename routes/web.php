@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-
+// use App\Http\Contr
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('{locale}',[HomeController::class,'lang']);
+Route::get('/',[HomeController::class,'home']);
